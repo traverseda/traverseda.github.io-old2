@@ -4,13 +4,11 @@ import shelve
 from os import listdir
 from os.path import isfile, join, basename
 
-#from webassets import Environment as AssetsEnvironment
-#from webassets.ext.jinja2 import AssetsExtension
-#assets_env = AssetsEnvironment('./assets', '/assets')
-#env = Environment(loader=FileSystemLoader('./templates'),extensions=[AssetsExtension])
-#env.assets_environment = assets_env
-
-env = Environment(loader=FileSystemLoader('./templates'))
+from webassets import Environment as AssetsEnvironment
+from webassets.ext.jinja2 import AssetsExtension
+assets_env = AssetsEnvironment('./assets', '/assets')
+env = Environment(loader=FileSystemLoader('./templates'),extensions=[AssetsExtension])
+env.assets_environment = assets_env
 
 import mistune
 markdown = mistune.Markdown(escape=False)
