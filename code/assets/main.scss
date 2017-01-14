@@ -29,6 +29,19 @@ body{
     color:$base1;
 }
 
+.bar{
+    min-width:100%;
+    height:4;
+}
+.byellow{background-color:$yellow;}
+.borange{background-color:$orange;}
+.bred{background-color:$red;}
+.bmagenta{background-color:$magenta;}
+.bviolet{background-color:$violet;}
+.bblue{background-color:$blue;}
+.bcyan{background-color:$cyan;}
+.bgreen{background-color:$green;}
+
 #background{
     display: flex;
     max-width:100%;

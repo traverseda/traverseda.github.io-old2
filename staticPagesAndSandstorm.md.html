@@ -1,19 +1,21 @@
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>staticPagesAndSandstorm.md.html</title>
 </head>
 
 <body>
-    {% block accent %}
-    {% endblock %}
+    
+<div class="bar bblue"></div>
+
     <div id="background">
     <div id="core"></div>
     </div>
-    {% block bodyContent %}
-    {% endblock %}
+    
+
+
     <footer>
-        {% assets filters="scss", output="compiled.css", "main.scss" %}
-	    <link rel=stylesheet type=text/css href="code/{{ ASSET_URL }}">
-	{% endassets %}
+        
+	    <link rel=stylesheet type=text/css href="code//assets/compiled.css?546bd4f2">
+	
 	<!-- Piwik -->
 	<script type="text/javascript">
 	  var _paq = _paq || [];

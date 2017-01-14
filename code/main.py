@@ -1,6 +1,6 @@
 #!/bin/env python3
+import shelve, random
 from jinja2 import Template, Environment, FileSystemLoader
-import shelve
 from os import listdir
 from os.path import isfile, join, basename
 
@@ -9,6 +9,15 @@ from webassets.ext.jinja2 import AssetsExtension
 assets_env = AssetsEnvironment('./assets', '/assets')
 env = Environment(loader=FileSystemLoader('./templates'),extensions=[AssetsExtension])
 env.assets_environment = assets_env
+
+colors=['yellow','orange','red','magenta','violet','blue','cyan','green']
+
+def pickColour(text):
+    #Picks a random colour based on a string.
+    random.seed(text)
+    c = random.choice(colors)
+    return c
+env.filters['pickColour']=pickColour
 
 import mistune
 markdown = mistune.Markdown(escape=False)
@@ -37,8 +46,11 @@ posts=[
 
 ]
 
-notes=[]
+projects=[
 
+]
+
+notes=[]
 for file in listdir("../notes/"):
     if file.endswith(".md"):
         notes.append('../notes/'+file)
