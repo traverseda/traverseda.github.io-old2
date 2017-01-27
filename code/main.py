@@ -46,10 +46,6 @@ posts=[
 
 ]
 
-projects=[
-
-]
-
 notes=[]
 for file in listdir("../notes/"):
     if file.endswith(".md"):
