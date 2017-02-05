@@ -12,12 +12,13 @@ you print a 3D printer on a 3D printer, it's slightly less accurate. And so on
 and so on. This keeps us from true self-replication.
 
 A rack and pinion system printed using a 3D printed rack and pinion system is
-going to be less accurate then the original.
+going to be less accurate then the original. After so many copies,
+you've run out of lineararity.
 
 Repraps get around this using various "vitamens". Using cold-rolled steal bars
-instead of 3D printed parts, and getting their linearity from those. This
-increases the cost of our self replicators by a whole lot.
+instead of 3D printed parts, and getting their linearity from those handfull of
+"known good" components.
 
-But we have another source of pre-enginears linearity. The clocks on
+But we have another source of pre-engineard linearity. The clocks on
 microcontrollers provide a *high* degree of linearity in the 4th dimension,
 time.
