@@ -17,7 +17,8 @@ $green:     #859900;
 
 $baseWidth:600;
 
-@import 'codeHighlight';
+@import '_codeHighlight';
+//@import "_reset-src.scss";
 
 body * {
     max-width:$baseWidth;

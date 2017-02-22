@@ -15,7 +15,7 @@
     {% block bodyContent %}
     {% endblock %}
     <footer>
-        {% assets filters="scss", output="compiled.css", "main.scss" %}
+        {% assets filters="scss,cssmin", output="compiled.css", "main.scss" %}
 	    <link rel=stylesheet type=text/css href="code/{{ ASSET_URL }}">
 	{% endassets %}
 	<!-- Piwik -->
