@@ -14,9 +14,10 @@ def splitData(text):
     splitText = text.split("\n---\n")
     data = dict()
     if len(splitText) > 1:
-        data = parse.parse(yml_string, splitText[0])[0]
-        data = ruamel.yaml.load(data, ruamel.yaml.RoundTripLoader)
-        text="\n---\n".join(splitText[1:])
+        parseResult = parse.parse(yml_string, splitText[0])
+        if parseResult:
+            data = ruamel.yaml.load(parseResult[0], ruamel.yaml.RoundTripLoader)
+            text="\n---\n".join(splitText[1:])
     return (data, text)
 
 def joinData(data, text):
