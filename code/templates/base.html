@@ -1,14 +1,17 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
 </head>
 
 <body>
-    {% block accent %}
-    {% endblock %}
-    <div id="background">
+    <div id="background"> {# Keep me at the top! #}
     <div id="core"></div>
     </div>
+    <nav id="mainNav">
+        <div id="navCore">
+        </div>
+    </nav>
     {% block bodyContent %}
     {% endblock %}
     <footer>

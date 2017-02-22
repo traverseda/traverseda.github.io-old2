@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{name}}{% endblock %}
+
+{% block accent %}
+<div class="bar b{{name|pickColour}}"></div>
+{% endblock %}
+
+{% block bodyContent %}
+{{blogContent|markd}}
+{% endblock %}

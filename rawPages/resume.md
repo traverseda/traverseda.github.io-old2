@@ -1,3 +1,11 @@
+```yaml
+published: true
+lastRender: '2017-02-22T14:42:44.823022+00:00'
+stripHtml: false
+
+```
+---
+
 # Alex Davies
 ## System Architect
 
@@ -13,7 +21,7 @@ and/or contributor to multiple open source projects and advocate for open
 source ideology. Tireless learner continuously seeking to contribute to
 projects in order to improve overall skills and abilities.
 
-  
+---  
 
 ## Employment
 
@@ -34,8 +42,6 @@ Worked as part of a team delivering multi-media projects.
   * Set deadlines and reported responsibilities according to **agile methodologies**.
 
   * Used travis-ci, docker, and others in a wide ecosystem of **development and build tools.**
-
-  
 
 ###2013-07 -- 2015-05 **Resource Intelligence**
 
@@ -64,8 +70,6 @@ software projects.
 
   * Implemented interactive mapping using geoDjango.
 
-  
-
 ###2011-04--2013-04 **Healthpark.ca**
 
 Systems Administraor
@@ -79,8 +83,6 @@ Maintained Cloud Infrastructure as well as clinic LAN
   * Managed and debugged Django based FastCGI services, reducing downtime and server latency.
 
   * Maintained nginx servers.
-
-  
 
 ###2008-01--2010-02 **Brightcrow media** 
 

@@ -1,54 +1,61 @@
 #!/bin/env python3
-import shelve, random
-from jinja2 import Template, Environment, FileSystemLoader
+import random, parse, ruamel.yaml, arrow
 from os import listdir
 from os.path import isfile, join, basename
+from settings import *
 
-from webassets import Environment as AssetsEnvironment
-from webassets.ext.jinja2 import AssetsExtension
-assets_env = AssetsEnvironment('./assets', '/assets')
-env = Environment(loader=FileSystemLoader('./templates'),extensions=[AssetsExtension])
-env.assets_environment = assets_env
+yml_string="```yaml\n{}\n```"
 
-colors=['yellow','orange','red','magenta','violet','blue','cyan','green']
+def splitData(text):
+    """This function strips yaml out of the first segment, and returns it as data.
+    """
+    splitText = text.split("\n---\n")
+    data = dict()
+    if len(splitText) > 1:
+        data = parse.parse(yml_string, splitText[0])[0]
+        data = ruamel.yaml.load(data, ruamel.yaml.RoundTripLoader)
+        text="\n---\n".join(splitText[1:])
+    return (data, text)
 
-def pickColour(text):
-    #Picks a random colour based on a string.
-    random.seed(text)
-    c = random.choice(colors)
-    return c
-env.filters['pickColour']=pickColour
+def joinData(data, text):
+    yml = ruamel.yaml.dump(data, Dumper=ruamel.yaml.RoundTripDumper)
+    yml = yml_string.format(yml)
+    newText="\n---\n".join((yml,text))
+    return newText
 
-import mistune
-markdown = mistune.Markdown(escape=False)
-def markd(text):
-    return markdown(text)
-
-env.filters['markd']=markd
-
+from collections import ChainMap
 template = env.get_template('blogPost.html')
-
 def renderBlog(filePath):
     f = open(filePath, 'r').read()
     baseName = basename(filePath)+".html"
+    data, content = splitData(f)
+    data = ChainMap(data, defaultOptions)
+    if data['published']:
+        print("Compiling "+filePath)
+        context = {}
+        context['blogContent'] = content
+        context['blogData'] = data
+        context['name']=baseName
 
-    context = {}
-    context['blogContent'] = f
-    context['name']=baseName
-
-    renderOut = template.render(**context)
-    o = open('../'+baseName,'w+').write(renderOut)
+        renderOut = template.render(**context)
+        o = open('../'+baseName,'w+').write(renderOut)
+        data['lastRender']=str(arrow.utcnow())
+    else:
+        print("Ignoring "+filePath)
+    newText = joinData({key:value for key, value in data.items()}, content)
+    f = open(filePath, 'w').write(newText)
     return baseName
 
-#All notes are rendered. These ones are the only ones that
-#Are going to end up getting listed though.
-posts=[
-
-]
-
-notes=[]
-for file in listdir("../notes/"):
+pages=[]
+for file in listdir("../rawPages/"):
     if file.endswith(".md"):
-        notes.append('../notes/'+file)
+        pages.append('../rawPages/'+file)
 
-print([i for i in map(renderBlog, notes)])
+[i for i in map(renderBlog, pages)]
+
+def renderIndex(index):
+    return index
+
+from indexes import indexes
+
+print([i for i in map(renderIndex, indexes)])
