@@ -40,10 +40,14 @@ body{
     background-color:$base03;
     max-width:100%;
     width:auto;
+    width:auto;
     padding:20;
-//    overflow:scroll;
+    padding-top:0;
+    padding-bottom:0;
+    overflow:auto;
     pre {
         max-width:100%;
+        width:auto;
     }
 }
 
@@ -154,3 +158,13 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
+
+scrollbar-track
+{
+  background: $base02;
+}
+
+scrollbar-thumb
+{
+  background: $base03;
+}

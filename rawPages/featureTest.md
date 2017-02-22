@@ -1,7 +1,8 @@
 ```yaml
-lastRender: '2017-02-22T16:34:47.104539+00:00'
-published: true
 stripHtml: false
+includeToC: false
+lastRender: '2017-02-22T18:07:00.858068+00:00'
+published: true
 
 ```
 ---
@@ -27,7 +28,7 @@ three print “Fizz” instead of the number and for the multiples of five print
 def buzz(data):
     for i in data:
         if i % 3 == 0 and i % 5 == 0:
-            print(FizzBuzz)
+            print("FizzBuzz")
         elif i % 3 == 0:
             print("Fizz")
         elif i % 5 == 0:

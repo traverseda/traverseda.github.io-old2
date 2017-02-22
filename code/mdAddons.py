@@ -13,4 +13,5 @@ class HighlightRendererMixin():
                 mistune.escape(code)
         lexer = get_lexer_by_name(lang, stripall=True)
         formatter = html.HtmlFormatter()
+        #formatter = html.HtmlFormatter(linenos=True)
         return highlight(code, lexer, formatter)

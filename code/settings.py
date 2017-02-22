@@ -29,4 +29,5 @@ reserverdNames=['notes','code','index']
 defaultOptions={
     'published':False,
     'stripHtml':False,
+    'includeToC':False,
 }

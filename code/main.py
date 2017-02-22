@@ -1,8 +1,10 @@
 #!/bin/env python3
-import random, parse, ruamel.yaml, arrow
+import random, parse, ruamel.yaml, arrow, hashlib
 from os import listdir
 from os.path import isfile, join, basename
 from settings import *
+from collections import ChainMap, defaultdict
+
 
 yml_string="```yaml\n{}\n```"
 
@@ -23,8 +25,8 @@ def joinData(data, text):
     newText="\n---\n".join((yml,text))
     return newText
 
-from collections import ChainMap
 template = env.get_template('blogPost.html')
+indexes=defaultdict(list)
 def renderBlog(filePath):
     f = open(filePath, 'r').read()
     baseName = basename(filePath)+".html"
@@ -40,6 +42,18 @@ def renderBlog(filePath):
         renderOut = template.render(**context)
         o = open('../'+baseName,'w+').write(renderOut)
         data['lastRender']=str(arrow.utcnow())
+        if "createdDate" not in data:
+            data.createdDate=str(arrow.utcnow())
+
+        pageObject={
+            'data':data,
+            'content':content,
+            'name':baseName,
+            'file':filePath,
+        }
+        if 'tags' in data:
+            for i in data['tags']:
+                indexes[i].append(pageObject)
     else:
         print("Ignoring "+filePath)
     newText = joinData({key:value for key, value in data.items()}, content)

@@ -7,5 +7,7 @@
 {% endblock %}
 
 {% block bodyContent %}
+<link rel="alternate" type="application/rss+xml" href="http://example.com/feed" />
+<a rel="alternate" type="application/rss+xml" href="http://example.com/feed">rss</a>
 {{blogContent|markd}}
 {% endblock %}
