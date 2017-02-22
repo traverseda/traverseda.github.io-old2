@@ -1,8 +1,8 @@
 ```yaml
-stripHtml: false
 includeToC: false
-lastRender: '2017-02-22T18:07:00.858068+00:00'
+stripHtml: false
 published: true
+lastRender: '2017-02-22T18:30:05.014514+00:00'
 
 ```
 ---

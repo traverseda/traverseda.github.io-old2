@@ -40,11 +40,13 @@ body{
     background-color:$base03;
     max-width:100%;
     width:auto;
-    width:auto;
     padding:20;
-    padding-top:0;
-    padding-bottom:0;
+    padding-top:10;
+    padding-bottom:10;
     overflow:auto;
+    :first-child {
+        margin:0;
+    }
     pre {
         max-width:100%;
         width:auto;
@@ -75,7 +77,6 @@ body{
     @media print {
         display:None;
     }
-
 }
 
 .bar{
@@ -84,12 +85,12 @@ body{
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
+    display:block;
+    height:1px;
+    border:0;
     border-top: 6px solid #000;
-    margin: 1em 0;
-    padding: 0; 
+    margin:1em 0;
+    padding:0; 
     border-color:$base02;
     max-width:100%;
     @media print {
@@ -114,8 +115,10 @@ hr {
     height:100%;
     z-index:-10;
     position:fixed;
+    margin:0;
     justify-content:center;
     #core{
+        margin:0;
 	max-width:$baseWidth+60;
 	height:100%;
 	background-color:$base03;
@@ -156,15 +159,4 @@ h1,h2,h3,h4,h5,h6{
     @media print {
         color:#000;
     }
-}
-
-
-scrollbar-track
-{
-  background: $base02;
-}
-
-scrollbar-thumb
-{
-  background: $base03;
 }

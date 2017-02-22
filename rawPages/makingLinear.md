@@ -1,82 +1,11 @@
 ```yaml
-stripHtml: false
 includeToC: false
-lastRender: '2017-02-22T13:02:37.210597+00:00'
+stripHtml: false
 published: false
+lastRender: '2017-02-22T13:02:37.210597+00:00'
 
 ```
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Engineering Linearity
 ##Preventing "a photo-copy of a photo-copy of a photo-copy" in self-replicating machines.
