@@ -17,6 +17,8 @@ $green:     #859900;
 
 $baseWidth:600;
 
+@import 'codeHighlight';
+
 body * {
     max-width:$baseWidth;
     align-self:center;
@@ -29,6 +31,19 @@ body{
     flex-direction:column;
     background-color:$base02;
     color:$base1;
+}
+
+.highlight{
+    padding-top:0;
+    font-size:125%;
+    background-color:$base03;
+    max-width:100%;
+    width:auto;
+    padding:20;
+//    overflow:scroll;
+    pre {
+        max-width:100%;
+    }
 }
 
 #mainNav {
@@ -52,6 +67,10 @@ body{
             min-height:100%;
         }
     }
+    @media print {
+        display:None;
+    }
+
 }
 
 .bar{
@@ -63,11 +82,15 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 6px solid #ccc;
+    border-top: 6px solid #000;
     margin: 1em 0;
     padding: 0; 
     border-color:$base02;
     max-width:100%;
+    @media print {
+        color:#000;
+        border-top: 2px solid #000;
+    }
 }
 
 .byellow{background-color:$yellow;}

@@ -14,9 +14,8 @@ def pickColour(text):
 env.filters['pickColour']=pickColour
 
 import mistune
-from mistune_contrib.highlight import HighlightMixin
-
-class renderer(mistune.Renderer,HighlightMixin):
+from mdAddons import HighlightRendererMixin
+class renderer(HighlightRendererMixin,mistune.Renderer):
     pass
 markdown = mistune.Markdown(escape=False,renderer=renderer())
 

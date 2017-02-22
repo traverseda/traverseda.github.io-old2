@@ -52,10 +52,3 @@ for file in listdir("../rawPages/"):
         pages.append('../rawPages/'+file)
 
 [i for i in map(renderBlog, pages)]
-
-def renderIndex(index):
-    return index
-
-from indexes import indexes
-
-print([i for i in map(renderIndex, indexes)])
