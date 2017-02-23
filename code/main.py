@@ -7,6 +7,7 @@ from collections import ChainMap, defaultdict
 
 
 yml_string="```yaml\n{}\n```"
+yml_extractor = parse.compile(yml_string)
 
 def splitData(text):
     """This function strips yaml out of the first segment, and returns it as data.
@@ -14,7 +15,7 @@ def splitData(text):
     splitText = text.split("\n---\n")
     data = dict()
     if len(splitText) > 1:
-        parseResult = parse.parse(yml_string, splitText[0])
+        parseResult = yml_extractor.parse(splitText[0])
         if parseResult:
             data = ruamel.yaml.load(parseResult[0], ruamel.yaml.RoundTripLoader)
             text="\n---\n".join(splitText[1:])
@@ -29,11 +30,17 @@ def joinData(data, text):
 template = env.get_template('blogPost.html')
 indexes=defaultdict(list)
 def renderBlog(filePath):
+    changed=False
     f = open(filePath, 'r').read()
     baseName = basename(filePath)+".html"
     data, content = splitData(f)
     data = ChainMap(data, defaultOptions)
-    if data['published']:
+    checksum = hashlib.sha256(content.encode('utf-8')).hexdigest()
+    if  checksum != data['contentHash']:
+        changed = True
+        data['contentHash'] = checksum
+
+    if data["published"] and changed:
         print("Compiling "+filePath)
         context = {}
         context['blogContent'] = content
@@ -59,7 +66,6 @@ def renderBlog(filePath):
         print("Ignoring "+filePath)
     newText = joinData({key:value for key, value in data.items()}, content)
     f = open(filePath, 'w').write(newText)
-    return baseName
 
 pages=[]
 for file in listdir("../rawPages/"):

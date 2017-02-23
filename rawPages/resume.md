@@ -1,8 +1,9 @@
 ```yaml
+contentHash: f22a2d230c66937ac8e97144d92ec437acd79a9950a34b6cfc4896c2e342594f
+lastRender: '2017-02-23T19:41:42.301080+00:00'
+includeToC: false
 stripHtml: false
 published: true
-includeToC: false
-lastRender: '2017-02-23T01:24:08.385106+00:00'
 
 ```
 ---
@@ -26,9 +27,8 @@ projects in order to improve overall skills and abilities.
 
 ## Employment
 
-###2015-05--2015-12 **Brave New World Halifax**
-
-Web Developer
+###**Brave New World Halifax**
+####2015-05--2015-12 
 
 Worked as part of a team delivering multi-media projects.
 
@@ -44,9 +44,8 @@ Worked as part of a team delivering multi-media projects.
 
   * Used travis-ci, docker, and others in a wide ecosystem of **development and build tools.**
 
-###2013-07 -- 2015-05 **Resource Intelligence**
-
-Data Acquisition Software Engineer
+###**Resource Intelligence**
+####2013-07 -- 2015-05 
 
 Developed systems for collecting data from a variety of sources and in-house
 software projects.
@@ -71,9 +70,8 @@ software projects.
 
   * Implemented interactive mapping using geoDjango.
 
-###2011-04--2013-04 **Healthpark.ca**
-
-Systems Administraor
+###**Healthpark.ca**
+####2011-04--2013-04 
 
 Maintained Cloud Infrastructure as well as clinic LAN
 
@@ -85,9 +83,8 @@ Maintained Cloud Infrastructure as well as clinic LAN
 
   * Maintained nginx servers.
 
-###2008-01--2010-02 **Brightcrow media** 
-
-Systems Administrator
+###**Brightcrow media** 
+####2008-01--2010-02 
 
 Managed a shared hosting environment
 

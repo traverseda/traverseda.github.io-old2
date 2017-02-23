@@ -30,4 +30,5 @@ defaultOptions={
     'published':False,
     'stripHtml':False,
     'includeToC':False,
+    'contentHash':None,
 }

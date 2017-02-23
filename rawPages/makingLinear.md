@@ -1,8 +1,9 @@
 ```yaml
+contentHash: 898a234fd5a930a6118c83a5d8453c8f76826911b1d3dd400d5d032f469db39d
+lastRender: '2017-02-22T13:02:37.210597+00:00'
+includeToC: false
 stripHtml: false
 published: false
-includeToC: false
-lastRender: '2017-02-22T13:02:37.210597+00:00'
 
 ```
 ---
