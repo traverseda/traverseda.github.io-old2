@@ -1,8 +1,8 @@
 ```yaml
+stripHtml: false
 published: true
 includeToC: false
-stripHtml: false
-lastRender: '2017-02-23T00:38:29.688250+00:00'
+lastRender: '2017-02-23T01:24:08.437415+00:00'
 
 ```
 ---
@@ -16,8 +16,16 @@ lastRender: '2017-02-23T00:38:29.688250+00:00'
 
 ~~StrikeThrough~~
 
+> qoute
+
 ---
 
+ * Item 1
+ * item 2
+ * item 3
+ * item 4
+
+---
 ```python
 """
 Write a program that prints the numbers from 1 to 100. But for multiples of
