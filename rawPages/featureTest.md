@@ -1,8 +1,8 @@
 ```yaml
-stripHtml: false
-lastRender: '2017-02-22T22:01:24.704211+00:00'
-includeToC: false
 published: true
+includeToC: false
+stripHtml: false
+lastRender: '2017-02-23T00:38:29.688250+00:00'
 
 ```
 ---
@@ -37,5 +37,12 @@ def buzz(data):
             print(i)
 
 buzz(range(1,100))
+
+```
+---
+```python
+"A much"
+"thinner"
+"code block."
 
 ```

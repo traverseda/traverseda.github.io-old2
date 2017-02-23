@@ -15,7 +15,7 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
-$baseWidth:600;
+$baseWidth:640;
 
 @import '_codeHighlight';
 //@import "_reset-src.scss";
@@ -24,8 +24,8 @@ body > * {
     max-width:$baseWidth;
     align-self:center;
     width:100%;
-    margin-left:20px;
-    margin-right:20px;
+    padding-left:20px;
+    padding-right:20px;
     box-sizing:border-box;
 }
 
@@ -70,8 +70,7 @@ body{
     border-color:$base02;
     #navCore {
         width:100%;
-
-        max-width:$baseWidth + 140;
+        max-width:$baseWidth + 100;
         min-height:100%;
         flex-wrap: nowrap;
         display: flex;
@@ -123,14 +122,14 @@ hr {
     height:100%;
     z-index:-10;
     position:fixed;
-    margin:0;
+    padding:0;
     justify-content:center;
     #core{
 	align-self:center;
 	width:100%;
 
-        margin:0;
-	max-width:$baseWidth+60;
+        padding:0;
+	max-width:$baseWidth+20;
 	height:100%;
 	background-color:$base03;
     }
@@ -139,6 +138,10 @@ hr {
 .fullbleed {
     max-width:100%;
     width:auto;
+}
+
+.expander{
+    width:600px;
 }
 
 p {
