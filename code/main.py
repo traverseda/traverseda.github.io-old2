@@ -83,14 +83,18 @@ for file in listdir("../rawPages/"):
 [i for i in map(renderBlog, pages)]
 
 indexTemplate = env.get_template('index.html')
+rssTemplate = env.get_template('rss.xml')
 def renderIndex(item):
     key, pages = item
     print("Generating index: "+key)
     orderedPages = sorted(pages, key=lambda page: arrow.get(page['data']['firstPublish'])) 
     context = {
-        'pages':orderedPages
+        'pages':orderedPages,
+        'title':key,
     }
     renderOut = indexTemplate.render(**context)
     o = open('../index/'+key+'.html','w+').write(renderOut)
+    renderOut = rssTemplate.render(**context)
+    o = open('../index/'+key+'.rss','w+').write(renderOut)
 
 [i for i in map(renderIndex, indexes.items())]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   <title>traverseda's blog</title>
+
+   <link>/index/front.html</link>
+   
+   <item>
+     <title>resume.md.html</title>
+     <link>https://traverseda.github.io/resume.md.html</link>
+     <guid>https://traverseda.github.io/resume.md.html</guid>
+     <description><h1>Alex Davies</h1>
+<h2>System Architect</h2>
+<p><a href="mailto:traverse.da@gmail.com">traverse.da@gmail.com</a></p>
+<p><a href="tel:+19025801543">+1 902 580 1543</a></p>
+<h2>Summary</h2>
+<p>Passionate technology professional with over seven years of combined
+experience in software engineering and systems administration roles. Creator
+and/or contributor to multiple open source projects and advocate for open
+source ideology. Tireless learner continuously seeking to contribute to
+projects in order to improve overall skills and abilities.</p>
+</description>
+     <pubDate>2017-02-27T18:22:03.392492+00:00</pubDate>
+   </item>
+   
+</channel>
+</rss>

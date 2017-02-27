@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   <title>traverseda's blog</title>
+{#   <description></description> #}
+   <link>/index/{{title}}.html</link>
+   {% for page in pages %}
+   <item>
+     <title>{{page.name}}</title>
+     <link>https://traverseda.github.io/{{page.name}}</link>
+     <guid>https://traverseda.github.io/{{page.name}}</guid>
+     <description>{{page.content[0]|markd}}</description>
+     <pubDate>{{ page.data.firstPublish }}</pubDate>
+   </item>
+   {% endfor %}
+</channel>
+</rss>
+

@@ -11,8 +11,9 @@
 {% endblock %}
 
 {% block bodyContent %}
-<link rel="alternate" type="application/rss+xml" href="{{title}}.rss" />
-<a rel="alternate" type="application/rss+xml" href="{{title}}.rss">rss</a>
+<link rel="alternate" type="application/rss+xml" href="index/{{title}}.rss" />
+<a rel="alternate" type="application/rss+xml" href="index/{{title}}.rss">Subscribe via RSS</a>
+<hr>
 {% for page in pages %}
     {{page.content[0]|markd}}
     {% if page.content|length > 1 %}
