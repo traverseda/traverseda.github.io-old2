@@ -1,9 +1,11 @@
 ```yaml
-lastRender: '2017-02-23T19:41:42.301080+00:00'
-contentHash: f22a2d230c66937ac8e97144d92ec437acd79a9950a34b6cfc4896c2e342594f
-stripHtml: false
 includeToC: false
+stripHtml: false
 published: true
+lastRender: '2017-02-27T19:33:18.802496+00:00'
+tags: [front]
+firstPublish: '2017-02-27T18:22:03.392492+00:00'
+contentHash: 37a7f32e32f12cfc6a803702fb3e09831a846f3300dbfb1f79dc2c3546f9723b
 
 ```
 ---
@@ -23,7 +25,7 @@ and/or contributor to multiple open source projects and advocate for open
 source ideology. Tireless learner continuously seeking to contribute to
 projects in order to improve overall skills and abilities.
 
----  
+---
 
 ## Employment
 

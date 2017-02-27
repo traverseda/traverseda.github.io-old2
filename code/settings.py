@@ -14,10 +14,13 @@ def pickColour(text):
 env.filters['pickColour']=pickColour
 
 import mistune
+from mistune_contrib.toc import TocMixin
 from mdAddons import HighlightRendererMixin
-class renderer(HighlightRendererMixin,mistune.Renderer):
+class Renderer(HighlightRendererMixin,mistune.Renderer):
     pass
-markdown = mistune.Markdown(escape=False,renderer=renderer())
+
+renderer = Renderer()
+markdown = mistune.Markdown(escape=False,renderer=renderer)
 
 def markd(text):
     return markdown(text)

@@ -1,15 +1,15 @@
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <meta charset="UTF-8"> 
-    {% block base %}
-        <base href="./">
-    {% endblock %}
+    
+    <base href="../">
+
 
 </head>
 
 <body>
-    <div id="background"> {# Keep me at the top! #}
+    <div id="background"> 
 	<div id="core">
 	    <a href="index.html"><span>Home</span></a>
 	    <a href="about.md.html"><span>About</span></a>
@@ -19,12 +19,33 @@
         <div id="navCore">
         </div>
     </nav>
-    {% block bodyContent %}
-    {% endblock %}
+    
+<link rel="alternate" type="application/rss+xml" href=".rss" />
+<a rel="alternate" type="application/rss+xml" href=".rss">rss</a>
+
+    <h1>Alex Davies</h1>
+<h2>System Architect</h2>
+<p><a href="mailto:traverse.da@gmail.com">traverse.da@gmail.com</a></p>
+<p><a href="tel:+19025801543">+1 902 580 1543</a></p>
+<h2>Summary</h2>
+<p>Passionate technology professional with over seven years of combined
+experience in software engineering and systems administration roles. Creator
+and/or contributor to multiple open source projects and advocate for open
+source ideology. Tireless learner continuously seeking to contribute to
+projects in order to improve overall skills and abilities.</p>
+
+    <hr>
+    
+        <a href="resume.md.html">Read More</a>
+    
+
+
+
+
     <footer>
-        {% assets filters="scss,cssmin", output="compiled.css", "main.scss" %}
-	    <link rel=stylesheet type=text/css href="code/{{ ASSET_URL }}">
-	{% endassets %}
+        
+	    <link rel=stylesheet type=text/css href="code//assets/compiled.css?914f6b8c">
+	
 	<!-- Piwik -->
 	<script type="text/javascript">
 	  var _paq = _paq || [];

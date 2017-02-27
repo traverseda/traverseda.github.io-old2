@@ -1,14 +1,15 @@
 ```yaml
-lastRender: '2017-02-23T19:45:28.846342+00:00'
-contentHash: ed58dfec3c205fdb48a5bc7b21ad616b24b4b508cdc121a614d70f5ace1ee390
-stripHtml: false
-includeToC: false
 published: true
+stripHtml: false
+lastRender: '2017-02-26T06:48:46.474111+00:00'
+firstPublish: '2017-02-26T06:48:46.417057+00:00'
+contentHash: 7819b4bbef5e5107c32b69335a8fcf031ee1caee0678bdffb826c9b2c3cac5c7
+includeToC: false
 
 ```
 ---
 
-#Intro
+#a Concise Guide To The Art of Rationality
 
 We can improve our lives by thinking. Both on the global scale through science 
 and engineering, and personally by simply making better decisions in our own lives.
@@ -25,6 +26,7 @@ But hopefully it will help you accomplish them.
 works *works*. If rationality isn't helping you accomplish your goals then it's
 not rationality.
 
+---
 
 #The Valley of Bad Rationality
 

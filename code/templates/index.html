@@ -6,8 +6,22 @@
 <div class="bar b{{name|pickColour}}"></div>
 {% endblock %}
 
+{% block base %}
+    <base href="../">
+{% endblock %}
+
 {% block bodyContent %}
-<link rel="alternate" type="application/rss+xml" href="http://example.com/feed" />
-<a rel="alternate" type="application/rss+xml" href="http://example.com/feed">rss</a>
-{{blogContent|markd}}
+<link rel="alternate" type="application/rss+xml" href="{{title}}.rss" />
+<a rel="alternate" type="application/rss+xml" href="{{title}}.rss">rss</a>
+{% for page in pages %}
+    {{page.content[0]|markd}}
+    {% if page.content|length > 1 %}
+        <a href="{{page.name}}">Read More</a>
+    {% else %}
+        <a href="{{page.name}}">Permalink</a>
+    {% endif %}
+    <hr>
+{% endfor %}
+
+
 {% endblock %}

@@ -36,10 +36,27 @@ def renderBlog(filePath):
     data, content = splitData(f)
     data = ChainMap(data, defaultOptions)
     checksum = hashlib.sha256(content.encode('utf-8')).hexdigest()
+    if data['contentHash'] == None:
+        newText = joinData({key:value for key, value in data.items()}, content)
+        f = open(filePath, 'w').write(newText)
+
     if  checksum != data['contentHash']:
         changed = True
         data['contentHash'] = checksum
 
+    if data["published"]:
+        if 'firstPublish' not in data:
+            data['firstPublish'] = str(arrow.utcnow())
+
+        pageObject={
+            'data':data,
+            'content':content.split("\n---\n"),
+            'name':baseName,
+            'file':filePath,
+        }
+        if 'tags' in data:
+            for i in data['tags']:
+                indexes[i].append(pageObject)
     if data["published"] and changed:
         print("Compiling "+filePath)
         context = {}
@@ -52,20 +69,11 @@ def renderBlog(filePath):
         data['lastRender']=str(arrow.utcnow())
         if "createdDate" not in data:
             data.createdDate=str(arrow.utcnow())
-
-        pageObject={
-            'data':data,
-            'content':content,
-            'name':baseName,
-            'file':filePath,
-        }
-        if 'tags' in data:
-            for i in data['tags']:
-                indexes[i].append(pageObject)
+        newText = joinData({key:value for key, value in data.items()}, content)
+        f = open(filePath, 'w').write(newText)
     else:
         print("Ignoring "+filePath)
-    newText = joinData({key:value for key, value in data.items()}, content)
-    f = open(filePath, 'w').write(newText)
+
 
 pages=[]
 for file in listdir("../rawPages/"):
@@ -73,3 +81,16 @@ for file in listdir("../rawPages/"):
         pages.append('../rawPages/'+file)
 
 [i for i in map(renderBlog, pages)]
+
+indexTemplate = env.get_template('index.html')
+def renderIndex(item):
+    key, pages = item
+    print("Generating index: "+key)
+    orderedPages = sorted(pages, key=lambda page: arrow.get(page['data']['firstPublish'])) 
+    context = {
+        'pages':orderedPages
+    }
+    renderOut = indexTemplate.render(**context)
+    o = open('../index/'+key+'.html','w+').write(renderOut)
+
+[i for i in map(renderIndex, indexes.items())]

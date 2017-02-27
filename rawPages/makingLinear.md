@@ -1,7 +1,7 @@
 ```yaml
 lastRender: '2017-02-22T13:02:37.210597+00:00'
-contentHash: 898a234fd5a930a6118c83a5d8453c8f76826911b1d3dd400d5d032f469db39d
 stripHtml: false
+contentHash: 898a234fd5a930a6118c83a5d8453c8f76826911b1d3dd400d5d032f469db39d
 includeToC: false
 published: false
 
