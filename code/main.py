@@ -5,7 +5,6 @@ from os.path import isfile, join, basename
 from settings import *
 from collections import ChainMap, defaultdict
 
-
 yml_string="```yaml\n{}\n```"
 yml_extractor = parse.compile(yml_string)
 
@@ -80,7 +79,6 @@ for file in listdir("../rawPages/"):
     if file.endswith(".md"):
         pages.append('../rawPages/'+file)
 
-[i for i in map(renderBlog, pages)]
 
 indexTemplate = env.get_template('index.html')
 rssTemplate = env.get_template('rss.xml')
@@ -90,11 +88,31 @@ def renderIndex(item):
     orderedPages = sorted(pages, key=lambda page: arrow.get(page['data']['firstPublish'])) 
     context = {
         'pages':orderedPages,
-        'title':key,
+        'name':key,
     }
     renderOut = indexTemplate.render(**context)
     o = open('../index/'+key+'.html','w+').write(renderOut)
     renderOut = rssTemplate.render(**context)
     o = open('../index/'+key+'.rss','w+').write(renderOut)
 
-[i for i in map(renderIndex, indexes.items())]
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Build a static site')
+parser.add_argument('--build-all', dest='build_all', action='store_const',
+                   const=True, default=False,
+                   help='rebuild all pages, ignoring checksums')
+parser.add_argument('--build-search', dest='build_search', action='store_const',
+                   const=True, default=False,
+                   help='Rebuild the lunr.js search index')
+args = parser.parse_args()
+
+if __name__ == "__main__":
+    if args['build_all']:
+        pass
+    else:
+        [i for i in map(renderBlog, pages)]
+        [i for i in map(renderIndex, indexes.items())]
+
+    if args['build_search']:
+        pass

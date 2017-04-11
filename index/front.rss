@@ -3,7 +3,7 @@
 <channel>
    <title>traverseda's blog</title>
 
-   <link>/index/front.html</link>
+   <link>/index/.html</link>
    
    <item>
      <title>resume.md.html</title>

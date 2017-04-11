@@ -9,79 +9,9 @@ published: false
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Computing Enviroments
 
-These are my personaly notes. I've tried to make them intelegable to outsiders,
+These are my personal notes. I've tried to make them intelegable to outsiders,
 but I'm not editing it or anything. Please excuse horible spelling and rambling,
 it's just not a priority for me.
 
