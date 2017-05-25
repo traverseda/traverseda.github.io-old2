@@ -1,11 +1,13 @@
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Untitled{% endblock %} -- Outside Context Solutions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <meta charset="UTF-8"> 
     <script src="https://unpkg.com/lunr/lunr.min.js"></script>
     {% block base %}
         <base href="./">
     {% endblock %}
+    <link rel="icon" type="image/png"
+     href="favicon.png" />
 
 </head>
 
@@ -14,26 +16,31 @@
 	<div id="core">
 	</div>
     </div>
+{#
     <nav id="mainNav">
         <div id="navCore">
             <div id="navLeft">
 		<a href="index.html">Home</a>
 		<a href="about.md.html">About</a>
-		<a href="index/tags.html">Tags</a>
+		<a href="tags.html">Tags</a>
             </div>
             <div id="navMiddle">
             </div>
             <div id="navRight">
                 <form  action="/search.html">
-{#                    <input id="search" type="search" name="q" placeholder="Search" spellcheck="true">
-                    <button id="submitSearch">Q</button>#}
+                    <input id="search" type="search" name="q" placeholder="Search" spellcheck="true">
+                    <button id="submitSearch">Q</button>
                 </form>
             </div>
         </div>
     </nav>
+#}
     {% block bodyContent %}
     {% endblock %}
     <footer>
+{% block license %}
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+{% endblock %}
         {% assets filters="scss,cssmin", output="compiled.css", "main.scss" %}
 	    <link rel=stylesheet type=text/css href="code/{{ ASSET_URL }}">
 	{% endassets %}

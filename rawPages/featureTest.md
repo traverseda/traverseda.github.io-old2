@@ -1,9 +1,11 @@
 ```yaml
-lastRender: '2017-02-23T19:41:42.352956+00:00'
-stripHtml: false
+lastRender: '2017-05-25T11:41:27.632410+00:00'
+firstPublish: '2017-04-12T07:43:31.228077+00:00'
 contentHash: dec342bf6bd52c251a07a43a6b80246b7d1462f61e81216b7ca5998b80ca881e
-includeToC: false
+stripHtml: false
 published: true
+tags: [home]
+includeToC: false
 
 ```
 ---

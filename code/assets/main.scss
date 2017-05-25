@@ -72,7 +72,7 @@ body{
     display: flex;
     justify-content:center;
     border: 0;
-    border-bottom: 6px solid #ccc;
+    border-bottom: 6px solid;
     border-color:$base02;
     #navCore {
         width:100%;
@@ -212,15 +212,40 @@ blockquote {
     }
 }
 
+#indexHeader{
+    display: flex;
+    justify-content:space-between;
+    max-width: $baseWidth+80px;
+    background-color:$base03;
+    min-height:60px;
+    width:100%;
+    border-bottom: 6px solid;
+    border-color:$base02;
+    * {
+        margin:0px;
+        display: flex;
+        align-items:center;
+    }
+}
+
 @media print {
      overflow: visible !important;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'Roboto', sans-serif;
+    background-color:$base03;
     //Whhhhhyyyyy
     letter-spacing: 0px;
     margin-bottom:0;
+}
+
+@for $i from 1 through 6 {
+   h#{$i} {
+      max-width:$baseWidth+ 80px - $i * 12px;
+      padding-top:14px -($i * 2px);
+      padding-bottom:14px -($i * 2px);
+   }
 }
 
 .bright,strong{

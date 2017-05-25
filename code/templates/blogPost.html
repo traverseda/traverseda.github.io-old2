@@ -7,5 +7,6 @@
 {% endblock %}
 
 {% block bodyContent %}
-{{blogContent|markd}}
+{{blogContent|jinja|markd}}
+<hr>
 {% endblock %}

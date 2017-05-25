@@ -26,6 +26,18 @@ def markd(text):
     return markdown(text)
 env.filters['markd']=markd
 
+import html
+def obfuscate(text):
+    obfuscated=['&#%d;' % ord(x) for x in text]
+    obfuscated="".join(obfuscated)
+    return obfuscated
+env.filters['obfuscate']=obfuscate
+
+def jinjify(text):
+    t = env.from_string(text)
+    return t.render()
+env.filters['jinja']=jinjify
+
 colors=['yellow','orange','red','magenta','violet','blue','cyan','green']
 reserverdNames=['notes','code','index']
 

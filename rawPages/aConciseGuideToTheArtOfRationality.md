@@ -1,9 +1,9 @@
 ```yaml
-published: true
-stripHtml: false
-lastRender: '2017-02-26T06:48:46.474111+00:00'
+lastRender: '2017-05-25T11:41:27.646168+00:00'
 firstPublish: '2017-02-26T06:48:46.417057+00:00'
 contentHash: 7819b4bbef5e5107c32b69335a8fcf031ee1caee0678bdffb826c9b2c3cac5c7
+stripHtml: false
+published: true
 includeToC: false
 
 ```

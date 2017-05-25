@@ -11,11 +11,13 @@
 {% endblock %}
 
 {% block bodyContent %}
-<link rel="alternate" type="application/rss+xml" href="index/{{title}}.rss" />
-<a rel="alternate" type="application/rss+xml" href="index/{{title}}.rss">Subscribe via RSS</a>
-<hr>
+<link rel="alternate" type="application/rss+xml" href="index/{{name}}.rss" />
+<div id="indexHeader">
+<h1>{{name}}</h1>
+<a rel="alternate" type="application/rss+xml" href="index/{{name}}.rss">Subscribe via RSS</a>
+</div>
 {% for page in pages %}
-    {{page.content[0]|markd}}
+    {{page.content[0]|jinja|markd}}
     {% if page.content|length > 1 %}
         <a href="{{page.name}}">Read More</a>
     {% else %}

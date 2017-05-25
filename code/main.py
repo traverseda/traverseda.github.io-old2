@@ -28,8 +28,7 @@ def joinData(data, text):
 
 template = env.get_template('blogPost.html')
 indexes=defaultdict(list)
-def renderBlog(filePath):
-    changed=False
+def renderBlog(filePath, changed=False):
     f = open(filePath, 'r').read()
     baseName = basename(filePath)+".html"
     data, content = splitData(f)
@@ -105,14 +104,14 @@ parser.add_argument('--build-all', dest='build_all', action='store_const',
 parser.add_argument('--build-search', dest='build_search', action='store_const',
                    const=True, default=False,
                    help='Rebuild the lunr.js search index')
-args = parser.parse_args()
 
 if __name__ == "__main__":
-    if args['build_all']:
-        pass
+    args = parser.parse_args()
+    if args.build_all:
+        [i for i in map(lambda page: renderBlog(page, changed=True), pages)]
     else:
         [i for i in map(renderBlog, pages)]
-        [i for i in map(renderIndex, indexes.items())]
+    [i for i in map(renderIndex, indexes.items())]
 
-    if args['build_search']:
+    if args.build_search:
         pass

@@ -1,21 +1,22 @@
 ```yaml
-includeToC: false
+lastRender: '2017-05-25T11:41:27.457256+00:00'
+firstPublish: '2017-02-27T18:22:03.392492+00:00'
+contentHash: 6334fb221c782efcea13c0148bbab89dfa6639e8501b18e6aacb36c3a2160d21
 stripHtml: false
 published: true
-lastRender: '2017-02-27T19:33:18.802496+00:00'
-tags: [front]
-firstPublish: '2017-02-27T18:22:03.392492+00:00'
-contentHash: 37a7f32e32f12cfc6a803702fb3e09831a846f3300dbfb1f79dc2c3546f9723b
+tags: [home]
+includeToC: false
 
 ```
 ---
 
 # Alex Davies
 ## System Architect
+<a href="mailto:{{"traverseda@outsidecontext.solutions"|obfuscate}}">
+{{"traverseda@outsidecontext.solutions"|obfuscate}}</a>
 
-[traverse.da@gmail.com](mailto:traverse.da@gmail.com)
-
-[+1 902 580 1543](tel:+19025801543)
+<a href="tel:{{"+19025801543"|obfuscate}}">
+{{"+1 902 580 1543"|obfuscate}}</a>
 
 ## Summary
 
