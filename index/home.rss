@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   <title>traverseda's blog</title>
+
+   <link>/index/.html</link>
+   
+   <item>
+     <title>resume.md.html</title>
+     <link>https://traverseda.github.io/resume.md.html</link>
+     <guid>https://traverseda.github.io/resume.md.html</guid>
+     <description><h1>Alex Davies</h1>
+<h2>System Architect</h2>
+<p>&lt;a href="mailto:{{"traverseda@outsidecontext.solutions"|obfuscate}}"&gt;
+{{"traverseda@outsidecontext.solutions"|obfuscate}}&lt;/a&gt;</p>
+<p>&lt;a href="tel:{{"+19025801543"|obfuscate}}"&gt;
+{{"+1 902 580 1543"|obfuscate}}&lt;/a&gt;</p>
+<h2>Summary</h2>
+<p>Passionate technology professional with over seven years of combined
+experience in software engineering and systems administration roles. Creator
+and/or contributor to multiple open source projects and advocate for open
+source ideology. Tireless learner continuously seeking to contribute to
+projects in order to improve overall skills and abilities.</p>
+</description>
+     <pubDate>2017-02-27T18:22:03.392492+00:00</pubDate>
+   </item>
+   
+   <item>
+     <title>featureTest.md.html</title>
+     <link>https://traverseda.github.io/featureTest.md.html</link>
+     <guid>https://traverseda.github.io/featureTest.md.html</guid>
+     <description><h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p><strong>Bold Text</strong></p>
+<p><em>Italic Text</em></p>
+<p><del>StrikeThrough</del></p>
+<blockquote><p>qoute</p>
+</blockquote>
+</description>
+     <pubDate>2017-04-12T07:43:31.228077+00:00</pubDate>
+   </item>
+   
+</channel>
+</rss>
