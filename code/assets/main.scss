@@ -22,14 +22,19 @@ $baseWidth:640;
 
 body > * {
     max-width:$baseWidth;
+    break-after: always;
     align-self:center;
     width:100%;
     padding-left:20px;
     padding-right:20px;
     box-sizing:border-box;
+
 }
 
 body{
+    overflow: visible !important;
+
+    break-inside: auto;
     margin:0;
     display: flex;
     flex-direction:column;
@@ -37,6 +42,9 @@ body{
     color:$base1;
     * {
         min-width:0;
+    }
+    @media print {
+	 display: block;
     }
 }
 
@@ -64,6 +72,9 @@ body{
         width:auto;
     }
 }
+
+li {
+  margin-bottom: 0.4em; }
 
 #mainNav {
     height:50;
@@ -228,11 +239,9 @@ blockquote {
     }
 }
 
-@media print {
-     overflow: visible !important;
-}
 
 h1,h2,h3,h4,h5,h6{
+    page-break-before: page;
     font-family: 'Roboto', sans-serif;
     background-color:$base03;
     //Whhhhhyyyyy

@@ -1,11 +1,11 @@
 ```yaml
+lastRender: '2017-07-08T01:37:30.366297+00:00'
+contentHash: 4db498ff014f12337c136b16833ef44a9d3d4f2e64f4216c86d4410d56e6bdbf
 includeToC: false
-tags: [home]
 stripHtml: false
-lastRender: '2017-07-08T00:16:31.959767+00:00'
-published: true
 firstPublish: '2017-02-27T18:22:03.392492+00:00'
-contentHash: cd6d76d49552044deda97640b88d027cae281d17c99369290337443019cd13ff
+published: true
+tags: [home]
 
 ```
 ---
@@ -50,15 +50,10 @@ Developed solutions for a variety of clients.
 Worked as part of a team delivering multi-media projects.
 
   * Implemented **REST APIs** using [django-REST](http://www.django-rest-framework.org/).
-
   * Expanded my knowledge of reactjs development.
-
   * Worked with and debugged large stack of CSS and Javascript preproccessors, including SCSS and Babel
-
   * Participated in meetings assessing technical feasibility of client requests and developing **strategies/deadlines**.
-
   * Set deadlines and reported responsibilities according to **agile methodologies**.
-
   * Used travis-ci, docker, and others in a wide ecosystem of **development and build tools.**
 
 ###**Resource Intelligence**
@@ -68,23 +63,14 @@ Developed systems for collecting data from a variety of sources and in-house
 software projects.
 
   * Created a variety of software solutions, largely using python but touching on web technologies and front end design.
-
   * Created and enforced **rollover policy** that significantly reduced downtime of data entry system.
-
   * Directed the implementation of [haystack/solr](http://haystacksearch.org/) **search engine integration**, significantly speeding up long-running natural language processing tasks.
-
   * Spearheaded project to create complicated **data entry and validation** platform.
-
   * Introduced distributed **task queue** design pattern that cut hours off of common data-preparation tasks.
-
   * Integrated Django with **legacy databases**.
-
   * Created tools to integrate with third party **SOAP api**'s, significantly reducing turnaround time for implementing new api based functionality.
-
   * Created and maintained **database schema**, resolving industry knowledge from experts into a solid technical platform.
-
   * Used [Django-south](http://south.aeracode.org/) to optimize **database migrations**, leading to a tighter feedback/development loop and faster development cycles.
-
   * Implemented interactive mapping using geoDjango.
 
 ###**Healthpark.ca**
@@ -93,11 +79,8 @@ software projects.
 Maintained Cloud Infrastructure as well as clinic LAN
 
   * Managed AWS deployments.
-
   * Created development virtual machines, enabling the remote development team to work in a more consistent environment, significantly reducing deployment time and integration issues.
-
   * Managed and debugged Django based FastCGI services, reducing downtime and server latency.
-
   * Maintained nginx servers.
 
 ###**Brightcrow media** 
@@ -106,10 +89,7 @@ Maintained Cloud Infrastructure as well as clinic LAN
 Managed a shared hosting environment
 
   * Deployed PHP applications.
-
   * Managed domain names.
-
   * Scripted backup routines.
-
   * Managed user accounts.
 
