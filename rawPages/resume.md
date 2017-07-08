@@ -1,11 +1,11 @@
 ```yaml
-lastRender: '2017-05-25T11:41:27.457256+00:00'
-firstPublish: '2017-02-27T18:22:03.392492+00:00'
-contentHash: 6334fb221c782efcea13c0148bbab89dfa6639e8501b18e6aacb36c3a2160d21
-stripHtml: false
-published: true
-tags: [home]
 includeToC: false
+tags: [home]
+stripHtml: false
+lastRender: '2017-07-08T00:16:31.959767+00:00'
+published: true
+firstPublish: '2017-02-27T18:22:03.392492+00:00'
+contentHash: cd6d76d49552044deda97640b88d027cae281d17c99369290337443019cd13ff
 
 ```
 ---
@@ -29,6 +29,20 @@ projects in order to improve overall skills and abilities.
 ---
 
 ## Employment
+
+####**Freelance Software engineer**
+##### 2016--present
+
+Developed solutions for a variety of clients.
+
+  * Managed subcontractors in meeting clients user-experience expectations.
+  * Worked with bokeh to deliver interactive data visualization in client web
+    apps.
+  * Set deadlines and made accurate time estimates.
+  * Used ansible to automate deployment to production, testing, and development enviroments.
+  * Analyzed client requirements to build minimum viable products.
+  * Updated legacy applications to meet modern software standards.
+
 
 ###**Brave New World Halifax**
 ####2015-05--2015-12 
