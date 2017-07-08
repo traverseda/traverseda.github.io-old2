@@ -30,8 +30,8 @@ projects in order to improve overall skills and abilities.
 
 ## Employment
 
-####**Freelance Software engineer**
-##### 2016--present
+###**Freelance Software engineer**
+#### 2016--present
 
 Developed solutions for a variety of clients.
 
