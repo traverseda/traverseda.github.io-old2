@@ -1,11 +1,11 @@
 ```yaml
-firstPublish: '2017-02-27T18:22:03.392492+00:00'
-lastRender: '2017-07-15T17:41:22.718954+00:00'
-stripHtml: false
-includeToC: false
 published: true
+stripHtml: false
+firstPublish: '2017-02-27T18:22:03.392492+00:00'
+includeToC: false
+contentHash: 5255bffb243da128a3c2c8b87084af6269643a84dd1e7dd236c929851bd9ba9c
 tags: [home]
-contentHash: 149540627e0a589ba452408389a191b430a0bc0aff21c6dfe0089103c97b09bb
+lastRender: '2017-07-15T17:52:03.419376+00:00'
 
 ```
 ---
@@ -49,6 +49,7 @@ Developed solutions for a variety of clients.
   * Utilized **websocket communication** to deliver **real-time data** to client
     apps.
 
+---
 
 ###**Brave New World Halifax**
 ####2015-05--2015-12 
@@ -61,6 +62,8 @@ Worked as part of a team delivering multi-media projects.
   * Participated in meetings assessing technical feasibility of client requests and developing **strategies/deadlines**.
   * Set deadlines and reported responsibilities according to **agile methodologies**.
   * Used travis-ci, docker, and others in a wide ecosystem of **development and build tools.**
+
+---
 
 ###**Resource Intelligence**
 ####2013-07 -- 2015-05 
@@ -79,6 +82,8 @@ software projects.
   * Used [Django-south](http://south.aeracode.org/) to optimize **database migrations**, leading to a tighter feedback/development loop and faster development cycles.
   * Implemented interactive mapping using geoDjango.
 
+---
+
 ###**Healthpark.ca**
 ####2011-04--2013-04 
 
@@ -88,6 +93,8 @@ Maintained Cloud Infrastructure as well as clinic LAN
   * Created development virtual machines, enabling the remote development team to work in a more consistent environment, significantly reducing deployment time and integration issues.
   * Managed and debugged Django based FastCGI services, reducing downtime and server latency.
   * Maintained nginx servers.
+
+---
 
 ###**Brightcrow media** 
 ####2008-01--2010-02 
