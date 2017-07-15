@@ -1,11 +1,11 @@
 ```yaml
 firstPublish: '2017-02-27T18:22:03.392492+00:00'
-contentHash: 9366604bc8509bb420036a6d7cb2210796674a354a1f28aff36c2e393df2e4e0
-tags: [home]
-lastRender: '2017-07-15T17:38:31.239072+00:00'
-published: true
+lastRender: '2017-07-15T17:41:22.718954+00:00'
 stripHtml: false
 includeToC: false
+published: true
+tags: [home]
+contentHash: 149540627e0a589ba452408389a191b430a0bc0aff21c6dfe0089103c97b09bb
 
 ```
 ---
@@ -45,6 +45,10 @@ Developed solutions for a variety of clients.
   * Integrated data from sensors
   * Introduced distributed **task queue** design pattern that cut hours off of common data-preparation and analysis tasks.
   * Analyzed **sensor data** to generate proprietary metrics.
+  * Implemented **REST APIs** using [django-REST](http://www.django-rest-framework.org/).
+  * Utilized **websocket communication** to deliver **real-time data** to client
+    apps.
+
 
 ###**Brave New World Halifax**
 ####2015-05--2015-12 
