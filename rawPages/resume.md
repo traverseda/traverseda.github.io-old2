@@ -1,11 +1,11 @@
 ```yaml
-lastRender: '2017-07-08T01:37:30.366297+00:00'
-contentHash: 4db498ff014f12337c136b16833ef44a9d3d4f2e64f4216c86d4410d56e6bdbf
-includeToC: false
-stripHtml: false
 firstPublish: '2017-02-27T18:22:03.392492+00:00'
-published: true
+contentHash: 9366604bc8509bb420036a6d7cb2210796674a354a1f28aff36c2e393df2e4e0
 tags: [home]
+lastRender: '2017-07-15T17:38:31.239072+00:00'
+published: true
+stripHtml: false
+includeToC: false
 
 ```
 ---
@@ -35,14 +35,16 @@ projects in order to improve overall skills and abilities.
 
 Developed solutions for a variety of clients.
 
-  * Managed subcontractors in meeting clients user-experience expectations.
-  * Worked with bokeh to deliver interactive data visualization in client web
+  * **Managed subcontractors** in meeting clients user-experience expectations.
+  * Worked with bokeh to deliver **interactive data visualization** in client web
     apps.
   * Set deadlines and made accurate time estimates.
-  * Used ansible to automate deployment to production, testing, and development enviroments.
-  * Analyzed client requirements to build minimum viable products.
-  * Updated legacy applications to meet modern software standards.
-
+  * Used ansible to **automate deployment** to production, testing, and development enviroments.
+  * Analyzed client requirements to build **minimum viable products**.
+  * Updated **legacy applications** to meet modern software standards.
+  * Integrated data from sensors
+  * Introduced distributed **task queue** design pattern that cut hours off of common data-preparation and analysis tasks.
+  * Analyzed **sensor data** to generate proprietary metrics.
 
 ###**Brave New World Halifax**
 ####2015-05--2015-12 
