@@ -32,6 +32,10 @@ body > * {
 
 }
 
+footer {
+    padding-bottom:1em;
+}
+
 body{
     overflow: visible !important;
 
@@ -82,10 +86,15 @@ li {
     min-width:100%;
     color: $orange;
     text-align:center;
-    font-size:60;
+    font-size:50;
+    @media print {
+    }
 }
 
 #mainNav {
+    @media print {
+        display:None;
+    }
     height:50;
     background-color:$base03;
     min-width:100%;

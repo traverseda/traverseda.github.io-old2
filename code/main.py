@@ -33,12 +33,14 @@ def renderBlog(filePath, changed=False):
             'name':baseName,
             'file':filePath,
         }
+
         if 'tags' in data:
             for i in data['tags']:
                 indexes[i].append(pageObject)
     if data["published"] and changed:
         print("Compiling "+filePath)
         context = {}
+        context['data']=data
         context['blogContent'] = content
         context['blogData'] = data
         context['name']=baseName
@@ -73,7 +75,7 @@ def renderIndex(item):
     renderOut = indexTemplate.render(**context)
     o = open('../index/'+key+'.html','w+').write(renderOut)
     renderOut = rssTemplate.render(**context)
-    o = open('../index/'+key+'.rss','w+').write(renderOut)
+    o = open('../index/'+key+'.xml','w+').write(renderOut)
 
 
 import argparse
@@ -92,7 +94,7 @@ if __name__ == "__main__":
         [i for i in map(lambda page: renderBlog(page, changed=True), pages)]
     else:
         [i for i in map(renderBlog, pages)]
-    [i for i in map(renderIndex, indexes.items())]
+    foo = [i for i in map(renderIndex, indexes.items())]
 
     if args.build_search:
         pass

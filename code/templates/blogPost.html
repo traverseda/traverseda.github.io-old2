@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{name}}{% endblock %}
+{% block title %}{{data.name|default(name)}}{% endblock %}
 
 {% block accent %}
 <div class="bar b{{name|pickColour}}"></div>

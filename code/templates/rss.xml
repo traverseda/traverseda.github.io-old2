@@ -9,7 +9,7 @@
      <title>{{page.name}}</title>
      <link>https://traverseda.github.io/{{page.name}}</link>
      <guid>https://traverseda.github.io/{{page.name}}</guid>
-     <description>{{page.content[0]|markd}}</description>
+     <description>{{page.content[0]|jinja|markd}}</description>
      <pubDate>{{ page.data.firstPublish }}</pubDate>
    </item>
    {% endfor %}
