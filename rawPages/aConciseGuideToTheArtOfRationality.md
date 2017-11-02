@@ -1,10 +1,10 @@
 ```yaml
-contentHash: 7819b4bbef5e5107c32b69335a8fcf031ee1caee0678bdffb826c9b2c3cac5c7
-lastRender: '2017-11-02T00:09:24.959295+00:00'
 includeToC: false
-stripHtml: false
-firstPublish: '2017-02-26T06:48:46.417057+00:00'
+lastRender: '2017-11-02T00:15:47.555702+00:00'
 published: true
+firstPublish: '2017-02-26T06:48:46.417057+00:00'
+contentHash: 7819b4bbef5e5107c32b69335a8fcf031ee1caee0678bdffb826c9b2c3cac5c7
+stripHtml: false
 
 ```
 ---
