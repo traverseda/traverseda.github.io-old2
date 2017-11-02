@@ -1,12 +1,12 @@
 ```yaml
-includeToC: false
-lastRender: '2017-11-02T00:15:47.488700+00:00'
+contentHash: 5255bffb243da128a3c2c8b87084af6269643a84dd1e7dd236c929851bd9ba9c
+lastRender: '2017-11-02T01:12:23.017358+00:00'
 name: Alex Davies' Resume
 published: true
-firstPublish: '2017-02-27T18:22:03.392492+00:00'
-contentHash: 5255bffb243da128a3c2c8b87084af6269643a84dd1e7dd236c929851bd9ba9c
 tags: [home]
+firstPublish: '2017-02-27T18:22:03.392492+00:00'
 stripHtml: false
+includeToC: false
 
 ```
 ---

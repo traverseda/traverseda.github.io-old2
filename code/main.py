@@ -75,7 +75,7 @@ def renderIndex(item):
     renderOut = indexTemplate.render(**context)
     o = open('../index/'+key+'.html','w+').write(renderOut)
     renderOut = rssTemplate.render(**context)
-    o = open('../index/'+key+'.xml','w+').write(renderOut)
+    o = open('../index/'+key+'.rss','w+').write(renderOut)
 
 
 import argparse
