@@ -1,10 +1,14 @@
 ```yaml
+contentHash: 42b7d7fbbf3bd7f4d38978d0bb1f6949b065813c706cb83e87dd08988fe7265b
+created: !!python/object:arrow.arrow.Arrow {_datetime: !!timestamp '2017-11-03 17:53:11.898369'}
+firstPublish: '2017-08-07T15:19:34.721682+00:00'
 includeToC: false
 lastRender: '2017-11-02T00:15:47.472782+00:00'
-published: true
-firstPublish: '2017-08-07T15:19:34.721682+00:00'
-contentHash: 42b7d7fbbf3bd7f4d38978d0bb1f6949b065813c706cb83e87dd08988fe7265b
+published: false
+rendered: null
 stripHtml: false
+tags: [home]
+updated: !!python/object:arrow.arrow.Arrow {_datetime: !!timestamp '2017-11-03 17:53:11.898444'}
 
 ```
 ---

@@ -1,24 +1,23 @@
-{#<!doctype html>
-<html lang="en-US" >#}
+
 
 <head>
-    <title>{% block title %}Untitled{% endblock %} -- With dread but cautious optimism</title>
+    <title>home -- With dread but cautious optimism</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <meta charset="UTF-8"> 
-    {% block base %}
-        <base href="./">
-    {% endblock %}
+    
+    <base href="../">
+
     <link rel="icon" type="image/png"
      href="favicon.png" />
-    {% assets filters="scss,cssmin", output="compiled.css", "main.scss" %}
-        <link rel=stylesheet type=text/css href="code{{ ASSET_URL }}" media="screen">
-    {% endassets %}
+    
+        <link rel=stylesheet type=text/css href="code/assets/compiled.css?3ef5b0b1" media="screen">
+    
 
 </head>
 
-{#<body class="category_boat">#}
+
 <body>
-    <div id="background"> {# Keep me at the top! #}
+    <div id="background"> 
 	<div id="core">
 	</div>
     </div>
@@ -33,19 +32,53 @@
             <div id="navMiddle">
             </div>
             <div id="navRight">
-{#
-                <form  action="/search.html">
-                    <input id="search" type="search" name="q" placeholder="Search" spellcheck="true">
-                    <button id="submitSearch">Q</button>
-                </form>
-#}
+
             </div>
         </div>
     </nav>
-    {% block bodyContent %}
-    {% endblock %}
+    
+<link rel="alternate" type="application/rss+xml" href="index/home_0.rss" />
+<div id="indexHeader">
+<h1>home</h1>
+<a rel="alternate" type="application/rss+xml" href="index/home_0.rss">Subscribe via RSS</a>
+</div>
+
+    <h1>Alex Davies</h1>
+<h2>System Architect</h2>
+<p><a href="mailto:&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;">
+&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;</a></p>
+<p><a href="tel:&#43;&#49;&#57;&#48;&#50;&#53;&#56;&#48;&#49;&#53;&#52;&#51;">
+&#43;&#49;&#32;&#57;&#48;&#50;&#32;&#53;&#56;&#48;&#32;&#49;&#53;&#52;&#51;</a></p>
+<h2>Summary</h2>
+<p>Passionate technology professional with over seven years of combined
+experience in software engineering and systems administration roles. Creator
+and/or contributor to multiple open source projects and advocate for open
+source ideology. Tireless learner continuously seeking to contribute to
+projects in order to improve overall skills and abilities.</p>
+
+    
+        <a href="Alex Davies' Resume">Read More</a>
+    
+    <hr>
+
+    <h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p><strong>Bold Text</strong></p>
+<p><em>Italic Text</em></p>
+<p><del>StrikeThrough</del></p>
+<blockquote><p>qoute</p>
+</blockquote>
+
+    
+        <a href="">Read More</a>
+    
+    <hr>
+
+
+
     <footer>
-{% block license %}
+
 <p>
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="static/cc-by-sa_4.0_80x15.png" />
     </a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
@@ -53,11 +86,8 @@
 
 <p>Built using a custom static-site generator available <a href="https://github.com/traverseda/traverseda-github.io">here</a></p>
 
-{% endblock %}
-{#        {% assets filters="rjsmin", output="main.min.js", "brython/brython.js", "brython/brython_modules.js" %}
-	    <link rel=stylesheet type=text/css href="code/{{ ASSET_URL }}" media="screen">
-	{% endassets %}
-#}
+
+
 	<!-- Piwik -->
 	<script type="text/javascript">
 	  var _paq = _paq || [];

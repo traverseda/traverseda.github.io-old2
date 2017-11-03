@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}{{data.name|default(name)}}{% endblock %}
-
-{% block accent %}
-<div class="bar b{{name|pickColour}}"></div>
-{% endblock %}
+{% block title %}{{name|default(content.path.name)}}{% endblock %}
 
 {% block bodyContent %}
-{{blogContent|jinja|markd}}
+{{content.text|jinja|markd}}
+<p>Filed under: 
+{% for tag in tags %}
+    <a href="index/{{tag}}_0.html">{{tag}}</a>
+{% endfor %}
+</p>
 <hr>
 {% endblock %}

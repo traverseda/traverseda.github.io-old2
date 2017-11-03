@@ -11,10 +11,10 @@
      <guid>https://traverseda.github.io/resume.md.html</guid>
      <description><h1>Alex Davies</h1>
 <h2>System Architect</h2>
-<p>&lt;a href="mailto:{{"traverseda@outsidecontext.solutions"|obfuscate}}"&gt;
-{{"traverseda@outsidecontext.solutions"|obfuscate}}&lt;/a&gt;</p>
-<p>&lt;a href="tel:{{"+19025801543"|obfuscate}}"&gt;
-{{"+1 902 580 1543"|obfuscate}}&lt;/a&gt;</p>
+<p><a href="mailto:&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;">
+&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;</a></p>
+<p><a href="tel:&#43;&#49;&#57;&#48;&#50;&#53;&#56;&#48;&#49;&#53;&#52;&#51;">
+&#43;&#49;&#32;&#57;&#48;&#50;&#32;&#53;&#56;&#48;&#32;&#49;&#53;&#52;&#51;</a></p>
 <h2>Summary</h2>
 <p>Passionate technology professional with over seven years of combined
 experience in software engineering and systems administration roles. Creator
@@ -22,7 +22,7 @@ and/or contributor to multiple open source projects and advocate for open
 source ideology. Tireless learner continuously seeking to contribute to
 projects in order to improve overall skills and abilities.</p>
 </description>
-     <pubDate>2017-02-27T18:22:03.392492+00:00</pubDate>
+     <pubDate>2017-11-03T18:44:21.913465+00:00</pubDate>
    </item>
    
    <item>
@@ -38,7 +38,7 @@ projects in order to improve overall skills and abilities.</p>
 <blockquote><p>qoute</p>
 </blockquote>
 </description>
-     <pubDate>2017-04-12T07:43:31.228077+00:00</pubDate>
+     <pubDate>2017-11-03T18:43:55.500859+00:00</pubDate>
    </item>
    
 </channel>

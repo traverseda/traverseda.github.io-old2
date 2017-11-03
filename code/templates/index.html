@@ -2,29 +2,24 @@
 
 {% block title %}{{name}}{% endblock %}
 
-{% block accent %}
-<div class="bar b{{name|pickColour}}"></div>
-{% endblock %}
-
 {% block base %}
     <base href="../">
 {% endblock %}
 
 {% block bodyContent %}
-<link rel="alternate" type="application/rss+xml" href="index/{{name}}.rss" />
+<link rel="alternate" type="application/rss+xml" href="index/{{name}}_{{pageNum}}.rss" />
 <div id="indexHeader">
 <h1>{{name}}</h1>
-<a rel="alternate" type="application/rss+xml" href="index/{{name}}.rss">Subscribe via RSS</a>
+<a rel="alternate" type="application/rss+xml" href="index/{{name}}_{{pageNum}}.rss">Subscribe via RSS</a>
 </div>
-{% for page in pages %}
-    {{page.content[0]|jinja|markd}}
-    {% if page.content|length > 1 %}
-        <a href="{{page.name}}">Read More</a>
+{% for post in posts %}
+    {{post.content.text.split('---')[0]|jinja|markd|safe}}
+    {% if post.content.text.split('---')|length > 1 %}
+        <a href="{{post.name}}">Read More</a>
     {% else %}
-        <a href="{{page.name}}">Permalink</a>
+        <a href="{{post.name}}">Permalink</a>
     {% endif %}
     <hr>
 {% endfor %}
-
 
 {% endblock %}

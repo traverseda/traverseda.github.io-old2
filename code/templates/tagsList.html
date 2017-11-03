@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block base %}
+    <base href="../">
+{% endblock %}
+
+{% block title %}List of tags{% endblock %}
+
+{% block bodyContent %}
+    <h1>List of tags</h1>
+    {% for tag, count in tags.items() %}
+        <a href="index/{{tag}}_0.html">{{tag}}: {{count}}</a>
+    {% endfor %}
+    <hr>
+{% endblock %}
