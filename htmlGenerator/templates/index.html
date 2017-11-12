@@ -15,9 +15,9 @@
 {% for post in posts %}
     {{post.content.text.split('---')[0]|jinja|markd|safe}}
     {% if post.content.text.split('---')|length > 1 %}
-        <a href="{{post.content.path}}.html">Read More</a>
+        <a class="readmore" href="{{post.content.path}}.html">Read More</a>
     {% else %}
-        <a href="{{post.content.path}}.html">Permalink</a>
+        <a class="readmore" href="{{post.content.path}}.html">Permalink</a>
     {% endif %}
     <hr>
 {% endfor %}

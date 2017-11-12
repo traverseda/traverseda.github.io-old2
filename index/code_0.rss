@@ -37,8 +37,6 @@ ordinary sympy numbers.</p>
 <span class="sd">and removing the init method.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="n">one</span> <span class="o">=</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
 <span class="k">class</span> <span class="nc">Probability</span><span class="p">(</span><span class="n">ObjectProxy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A percentage object, you can use it to properly</span>

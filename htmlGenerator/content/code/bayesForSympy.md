@@ -35,8 +35,6 @@ issues you might try replacing `ObjectProxy` with `S.rational`
 and removing the init method.
 """
 
-one = S(1)
-
 class Probability(ObjectProxy):
     """
     A percentage object, you can use it to properly
