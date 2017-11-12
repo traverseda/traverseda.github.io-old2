@@ -7,4 +7,5 @@ OUTPUT_DIR="../"
 
 DEFAULT_CONTEXT={
     "siteName":"With dread but cautious optimism",
+    "content":{},
 }

@@ -51,10 +51,14 @@ def markd(context):
         yield page
 
 def render(context,template,outpath=None):
+    localContext = ChainMap(context,DEFAULT_CONTEXT)
     template = jinjaEnv.get_template(template)
     if not outpath:
         outpath=str(context['content']['path'])+".html"
-    renderOut = template.render(**ChainMap(context,DEFAULT_CONTEXT))
+    depthPath = Path(outpath).parent.parts
+    depthPath = "".join(["../" for i in depthPath])
+    localContext['content']['depthPath']=depthPath
+    renderOut = template.render(**localContext)
     outFile = Path(OUTPUT_DIR+outpath)
     outFile.parent.mkdir(parents=True,exist_ok=True)
     outFile.write_text(renderOut)
@@ -75,6 +79,7 @@ def index(pages,name,template,outpath="index/{name}_{page}.html",count=20):
             'pageNum':idx,
             'pageCount':total,
             'name':name,
+            'content':{},
         }
         render(context,template,outpath.format(name=name,page=idx))
 
