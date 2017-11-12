@@ -4,13 +4,13 @@
    <title>traverseda's blog</title>
 {#   <description></description> #}
    <link>/index/{{title}}.html</link>
-   {% for page in pages %}
+   {% for post in posts %}
    <item>
-     <title>{{page.name}}</title>
-     <link>https://traverseda.github.io/{{page.name}}</link>
-     <guid>https://traverseda.github.io/{{page.name}}</guid>
-     <description>{{page.content[0]|jinja|markd}}</description>
-     <pubDate>{{ page.data.firstPublish }}</pubDate>
+     <title>{{post.content.path|string+'.html'}}</title>
+     <link>https://traverseda.github.io/{{post.content.path|string+'.html'}}</link>
+     <guid>https://traverseda.github.io/{{post.content.path|string+'.html'}}</guid>
+     <description>{{post.content.text.split('---')[0]|jinja|markd|safe}}</description>
+     <pubDate>{{ post.created }}</pubDate>
    </item>
    {% endfor %}
 </channel>

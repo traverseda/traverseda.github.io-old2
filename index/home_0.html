@@ -1,0 +1,161 @@
+
+
+<head>
+    <title>home -- With dread but cautious optimism</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <meta charset="UTF-8"> 
+    
+    <base href="../">
+
+    <link rel="icon" type="image/png"
+     href="favicon.png" />
+    
+        <link rel=stylesheet type=text/css href="code/assets/compiled.css?3ef5b0b1" media="screen">
+    
+
+</head>
+
+
+<body>
+    <div id="background"> 
+	<div id="core">
+	</div>
+    </div>
+    <h1 id="siteTitle">With dread but cautious optimism</h1>
+    <nav id="mainNav">
+        <div id="navCore">
+            <div id="navLeft">
+                <a href="index.html">Home</a>
+                <a href="resume.md.html">About</a>
+                <a href="index/tagsList.html">Tags</a>
+            </div>
+            <div id="navMiddle">
+            </div>
+            <div id="navRight">
+
+            </div>
+        </div>
+    </nav>
+    
+<link rel="alternate" type="application/rss+xml" href="index/home_0.rss" />
+<div id="indexHeader">
+<h1>home</h1>
+<a rel="alternate" type="application/rss+xml" href="index/home_0.rss">Subscribe via RSS</a>
+</div>
+
+    <h1>Bayes-theorum probability object for sympy</h1>
+<p>This is a quick hack I did to support adding probabilities together using sympy,
+which is symbolic mathematics for python. Since the objects represent an
+equation, you can represent things like <code>p(1/3)+p(1/4)</code> without floating point
+errors. When not interacting with another probability, they're treated as
+ordinary sympy numbers.</p>
+<div class="highlight">
+<div class='expander'></div>
+<pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span>
+<span class="kn">from</span> <span class="nn">wrapt</span> <span class="kn">import</span> <span class="n">ObjectProxy</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A class for quickly doing math on percentages,</span>
+<span class="sd">using bayes theorum.</span>
+
+<span class="sd">We use object proxying because we don&#39;t know what type</span>
+<span class="sd">of number the underlying probability is. Although</span>
+<span class="sd">probably we could just treat it as a rational number.</span>
+
+<span class="sd">Still, as an object proxy we use PI as a probability,</span>
+<span class="sd">or inifinity, or whatever. Any type of number can</span>
+<span class="sd">be treated like a probability.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">one</span> <span class="o">=</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Probability</span><span class="p">(</span><span class="n">ObjectProxy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A percentage object, you can use it to properly</span>
+<span class="sd">    add or subtract percentage from one another.</span>
+<span class="sd">    When used with a regular number, acts like</span>
+<span class="sd">    a regular number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wrapped</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="n">wrapped</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Probability</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Probability</span><span class="p">(</span><span class="bp">self</span><span class="o">+</span><span class="p">(</span><span class="n">one</span><span class="o">-</span><span class="bp">self</span><span class="p">)</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Probability</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Probability</span><span class="p">(</span><span class="bp">self</span><span class="o">-</span><span class="bp">self</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Probability</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="s2">&quot;1/3&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">p</span><span class="p">(</span><span class="s2">&quot;1/4&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">p</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)))</span> <span class="c1">#0.75</span>
+</pre></div>
+    
+        <a href="code/bayesForSympy.md.html">Permalink</a>
+    
+    <hr>
+
+    <h1>Alex Davies</h1>
+<h2>System Architect</h2>
+<p><a href="mailto:&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;">
+&#116;&#114;&#97;&#118;&#101;&#114;&#115;&#101;&#100;&#97;&#64;&#111;&#117;&#116;&#115;&#105;&#100;&#101;&#99;&#111;&#110;&#116;&#101;&#120;&#116;&#46;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;</a></p>
+<p><a href="tel:&#43;&#49;&#57;&#48;&#50;&#53;&#56;&#48;&#49;&#53;&#52;&#51;">
+&#43;&#49;&#32;&#57;&#48;&#50;&#32;&#53;&#56;&#48;&#32;&#49;&#53;&#52;&#51;</a></p>
+<h2>Summary</h2>
+<p>Passionate technology professional with over seven years of combined
+experience in software engineering and systems administration roles. Creator
+and/or contributor to multiple open source projects and advocate for open
+source ideology. Tireless learner continuously seeking to contribute to
+projects in order to improve overall skills and abilities.</p>
+
+    
+        <a href="resume.md.html">Read More</a>
+    
+    <hr>
+
+    <h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p><strong>Bold Text</strong></p>
+<p><em>Italic Text</em></p>
+<p><del>StrikeThrough</del></p>
+<blockquote><p>qoute</p>
+</blockquote>
+
+    
+        <a href="featureTest.md.html">Read More</a>
+    
+    <hr>
+
+
+
+    <footer>
+
+<p>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="static/cc-by-sa_4.0_80x15.png" />
+    </a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</p>
+
+<p>Built using a custom static-site generator available <a href="https://github.com/traverseda/traverseda.github.io">here</a>.</p>
+
+
+
+	<!-- Piwik -->
+	<script type="text/javascript">
+	  var _paq = _paq || [];
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  document.addEventListener('DOMContentLoaded', function() {
+	    _paq.push(['setTrackerUrl',  'https://api-f2140b84e3ab2c1be5e64a35a9142f2b.oasis.sandstorm.io']);
+	    _paq.push(['setSiteId', 1]);
+	    _paq.push(['setApiToken', 'tJUK4Xy8lGfj9uzpUlG2Uevla-nNSOe5ws7OkDfZHt-']);
+	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://j3l9oniyfxr8vx722f20.oasis.sandstorm.io/embed.js'; s.parentNode.insertBefore(g,s);
+
+	  }, false);
+	</script>
+	<!-- End Piwik Code -->
+    </footer>
+</body>

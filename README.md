@@ -1,4 +1,6 @@
-This is a custom static-site generator. It's pretty crappy, and uses some
-fundamentally bad data-structures, that I'm sure I'll get around to fixing some
-day. If you're interested in actually *using* it, drop me a line or open an
-issue and I'll prioritize fixing it's fundamentally broken architecture.
+This is a custom static-site generator. It's pretty decent, but every page
+needs to be loaded into memory at the moment, which isn't great. Should be
+fixable, but clear/simple code is more important to me right now.
+
+In order to get it playing nicely both in a folder and on a webserver, we've had
+to employ some hacks. Use relative urls like they were absolute urls.

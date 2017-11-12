@@ -1,10 +1,8 @@
 ```yaml
-contentHash: 7819b4bbef5e5107c32b69335a8fcf031ee1caee0678bdffb826c9b2c3cac5c7
-lastRender: '2017-11-02T01:12:23.086153+00:00'
+created: '2017-11-03T18:43:55.500859+00:00'
 published: true
-includeToC: false
-firstPublish: '2017-02-26T06:48:46.417057+00:00'
-stripHtml: false
+tags: []
+updated: '2017-11-03T18:43:55.501098+00:00'
 
 ```
 ---

@@ -1,11 +1,3 @@
-```yaml
-contentHash: c668f1182af37d2ff882e1e6d698243017fd72b44ed681ff42c0737161f96386
-published: false
-stripHtml: false
-includeToC: false
-
-```
----
 #Drawing on the web
 
 The web has gone through a great number of iterations, and has a great number of
