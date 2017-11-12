@@ -286,3 +286,13 @@ h1,h2,h3,h4,h5,h6{
     font-size: 150%;
     margin-top:10px;
 }
+
+code {
+    padding:2px;
+    background-color:$base02;
+    font-size: 110%;
+    font-weight: bold;
+    > strong {
+        font-weight: bolder;
+    }
+}
