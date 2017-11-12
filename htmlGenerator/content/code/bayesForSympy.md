@@ -14,6 +14,12 @@ equation, you can represent things like `p(1/3)+p(1/4)` without floating point
 errors. When not interacting with another probability, they're treated as
 ordinary sympy numbers.
 
+Please do note that sympy has a stats model, including a [probability
+objects](http://docs.sympy.org/latest/modules/stats.html#sympy.stats.Probability).
+That's probably what you want to use for serious stats work. This is a
+dead-simple type for bayes theorem, and can't do things like "what's the
+probability that X==5".
+
 ```python
 from sympy import S
 from wrapt import ObjectProxy
