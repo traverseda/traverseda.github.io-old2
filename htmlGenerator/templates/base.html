@@ -4,7 +4,10 @@
 <head>
     <title>{% block title %}Untitled{% endblock %} -- With dread but cautious optimism</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    {% block author %}
+        <meta name="author" content="traverseda">
+    {% endblock %}
     {% block base %}
         <base href="{{content.depthPath}}">
     {% endblock %}
