@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 <channel>
    <title>traverseda's blog</title>
-
+   <description></description>
    <link>/index/.html</link>
    
    <item>
      <title>boat/firstBoatPics.md.html</title>
      <link>https://traverseda.github.io/boat/firstBoatPics.md.html</link>
      <guid>https://traverseda.github.io/boat/firstBoatPics.md.html</guid>
-     <description><h1>Pictures of my boat</h1>
-<p><img src="boat/firstBoatPics/IMG_0616_CR2_embedded.jpg" alt=""></p>
-<p>Just some high-res pictures of my project boat from when I first bought it in 2016.</p>
+     <description>&lt;h1&gt;Pictures of my boat&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;boat/firstBoatPics/IMG_0616_CR2_embedded.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Just some high-res pictures of my project boat from when I first bought it in 2016.&lt;/p&gt;
 </description>
      <pubDate>2017-12-08T16:33:32.126945+00:00</pubDate>
    </item>

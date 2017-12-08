@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 <channel>
    <title>traverseda's blog</title>
-
+   <description></description>
    <link>/index/.html</link>
    
    <item>
      <title>code/bayesForSympy.md.html</title>
      <link>https://traverseda.github.io/code/bayesForSympy.md.html</link>
      <guid>https://traverseda.github.io/code/bayesForSympy.md.html</guid>
-     <description><h1>Bayes-theorem probability object for sympy</h1>
-<p>This is a quick hack I did to support adding probabilities together using sympy,
+     <description>&lt;h1&gt;Bayes-theorem probability object for sympy&lt;/h1&gt;
+&lt;p&gt;This is a quick hack I did to support adding probabilities together using sympy,
 which is symbolic mathematics for python. Since the objects represent an
-equation, you can represent things like <code>p(1/3)+p(1/4)</code> without floating point
-errors. When not interacting with another probability, they're treated as
-ordinary sympy numbers.</p>
-<p>Please do note that sympy has a stats model, including a <a href="http://docs.sympy.org/latest/modules/stats.html#sympy.stats.Probability">probability
-objects</a>.
-That's probably what you want to use for serious stats work. This is a
-dead-simple type for bayes theorem, and can't do things like "what's the
-probability that X==5".</p>
-<div class="highlight">
-<div class='expander'></div>
-<pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span>
-<span class="kn">from</span> <span class="nn">wrapt</span> <span class="kn">import</span> <span class="n">ObjectProxy</span>
+equation, you can represent things like &lt;code&gt;p(1/3)+p(1/4)&lt;/code&gt; without floating point
+errors. When not interacting with another probability, they&#39;re treated as
+ordinary sympy numbers.&lt;/p&gt;
+&lt;p&gt;Please do note that sympy has a stats model, including a &lt;a href=&#34;http://docs.sympy.org/latest/modules/stats.html#sympy.stats.Probability&#34;&gt;probability
+objects&lt;/a&gt;.
+That&#39;s probably what you want to use for serious stats work. This is a
+dead-simple type for bayes theorem, and can&#39;t do things like &#34;what&#39;s the
+probability that X==5&#34;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;
+&lt;div class=&#39;expander&#39;&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sympy&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;wrapt&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ObjectProxy&lt;/span&gt;
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">A class for quickly doing math on percentages,</span>
-<span class="sd">using bayes theorum.</span>
+&lt;span class=&#34;sd&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;A class for quickly doing math on percentages,&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;using bayes theorum.&lt;/span&gt;
 
-<span class="sd">We use object proxying because we don&#39;t know what type</span>
-<span class="sd">of number the underlying probability is. Although</span>
-<span class="sd">probably we could just treat it as a rational number.</span>
+&lt;span class=&#34;sd&#34;&gt;We use object proxying because we don&amp;#39;t know what type&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;of number the underlying probability is. Although&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;probably we could just treat it as a rational number.&lt;/span&gt;
 
-<span class="sd">Still, as an object proxy we can use PI as a probability,</span>
-<span class="sd">or inifinity, or whatever. Any type of number can</span>
-<span class="sd">be treated like a probability.</span>
+&lt;span class=&#34;sd&#34;&gt;Still, as an object proxy we can use PI as a probability,&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;or inifinity, or whatever. Any type of number can&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;be treated like a probability.&lt;/span&gt;
 
-<span class="sd">It&#39;s surprisngly performant, but if you get performance</span>
-<span class="sd">issues you might try replacing `ObjectProxy` with `S.rational`</span>
-<span class="sd">and removing the init method.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+&lt;span class=&#34;sd&#34;&gt;It&amp;#39;s surprisngly performant, but if you get performance&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;issues you might try replacing `ObjectProxy` with `S.rational`&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;and removing the init method.&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-<span class="k">class</span> <span class="nc">Probability</span><span class="p">(</span><span class="n">ObjectProxy</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A percentage object, you can use it to properly</span>
-<span class="sd">    add or subtract percentage from one another.</span>
-<span class="sd">    When used with a regular number, acts like</span>
-<span class="sd">    a regular number.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wrapped</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="n">wrapped</span><span class="p">))</span>
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Probability&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ObjectProxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;sd&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;    A percentage object, you can use it to properly&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;    add or subtract percentage from one another.&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;    When used with a regular number, acts like&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;    a regular number.&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wrapped&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;fm&#34;&gt;__init__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;wrapped&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Probability</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">Probability</span><span class="p">(</span><span class="bp">self</span><span class="o">+</span><span class="p">(</span><span class="n">one</span><span class="o">-</span><span class="bp">self</span><span class="p">)</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Probability</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">Probability</span><span class="p">(</span><span class="bp">self</span><span class="o">-</span><span class="bp">self</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__sub__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__add__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;isinstance&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Probability&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Probability&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;one&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;fm&#34;&gt;__add__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;fm&#34;&gt;__sub__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;isinstance&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Probability&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Probability&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;fm&#34;&gt;__sub__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;other&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
-<span class="n">p</span> <span class="o">=</span> <span class="n">Probability</span>
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Probability&lt;/span&gt;
 
-<span class="k">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="s2">&quot;1/3&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">p</span><span class="p">(</span><span class="s2">&quot;1/4&quot;</span><span class="p">)</span><span class="o">+</span><span class="n">p</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)))</span> <span class="c1">#0.75</span>
-</pre></div></description>
+&lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;1/3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;1/4&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#0.75&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description>
      <pubDate>2017-11-12T16:20:54.593134+00:00</pubDate>
    </item>
    

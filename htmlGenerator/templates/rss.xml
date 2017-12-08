@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 <channel>
    <title>traverseda's blog</title>
-{#   <description></description> #}
+   <description></description>
    <link>/index/{{title}}.html</link>
    {% for post in posts %}
    <item>
      <title>{{post.content.path|string+'.html'}}</title>
      <link>https://traverseda.github.io/{{post.content.path|string+'.html'}}</link>
      <guid>https://traverseda.github.io/{{post.content.path|string+'.html'}}</guid>
-     <description>{{post.content.text.split('---')[0]|jinja|markd}}</description>
+     <description>{{post.content.text.split('---')[0]|jinja|markd|e}}</description>
      <pubDate>{{ post.created }}</pubDate>
    </item>
    {% endfor %}
