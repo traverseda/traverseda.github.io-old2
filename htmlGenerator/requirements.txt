@@ -1,7 +1,11 @@
 jinja2
 mistune
-ruamel.yaml
+#ruamel.yaml
+pyyaml
+arrow
 mistune-contrib
 webassets
 parse
 cssmin
+markupsafe
+pygments

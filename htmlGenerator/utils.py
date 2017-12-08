@@ -26,7 +26,7 @@ def joinData(data, text):
     newText="\n---\n".join((yml,text))
     return newText
 
-from jinja2 import Template, Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
 from webassets import Environment as AssetsEnvironment
 from webassets.ext.jinja2 import AssetsExtension
 assets_env = AssetsEnvironment('./assets', '/assets')

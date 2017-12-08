@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   <title>traverseda's blog</title>
+
+   <link>/index/.html</link>
+   
+   <item>
+     <title>boat/firstBoatPics.md.html</title>
+     <link>https://traverseda.github.io/boat/firstBoatPics.md.html</link>
+     <guid>https://traverseda.github.io/boat/firstBoatPics.md.html</guid>
+     <description><h1>Pictures of my boat</h1>
+<p><img src="boat/firstBoatPics/IMG_0616_CR2_embedded.jpg" alt=""></p>
+</description>
+     <pubDate>2017-12-08T16:33:32.126945+00:00</pubDate>
+   </item>
+   
+</channel>
+</rss>
