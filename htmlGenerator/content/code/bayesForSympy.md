@@ -26,7 +26,7 @@ from wrapt import ObjectProxy
 
 """
 A class for quickly doing math on percentages,
-using bayes theorum.
+using bayes theorem.
 
 We use object proxying because we don't know what type
 of number the underlying probability is. Although

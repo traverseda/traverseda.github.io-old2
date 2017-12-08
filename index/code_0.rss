@@ -27,7 +27,7 @@ probability that X==5&#34;.&lt;/p&gt;
 
 &lt;span class=&#34;sd&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class=&#34;sd&#34;&gt;A class for quickly doing math on percentages,&lt;/span&gt;
-&lt;span class=&#34;sd&#34;&gt;using bayes theorum.&lt;/span&gt;
+&lt;span class=&#34;sd&#34;&gt;using bayes theorem.&lt;/span&gt;
 
 &lt;span class=&#34;sd&#34;&gt;We use object proxying because we don&amp;#39;t know what type&lt;/span&gt;
 &lt;span class=&#34;sd&#34;&gt;of number the underlying probability is. Although&lt;/span&gt;
