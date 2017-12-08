@@ -1,7 +1,7 @@
 ```yaml
 created: '2017-12-08T16:33:32.126945+00:00'
 published: true
-tags: [boat]
+tags: [boat, home]
 updated: '2017-12-08T16:33:32.126968+00:00'
 
 ```
@@ -10,6 +10,8 @@ updated: '2017-12-08T16:33:32.126968+00:00'
 # Pictures of my boat
 
 ![](boat/firstBoatPics/IMG_0616_CR2_embedded.jpg)
+
+Just some high-res pictures of my project boat from when I first bought it in 2016.
 
 ---
 
