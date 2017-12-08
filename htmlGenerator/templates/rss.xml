@@ -9,7 +9,7 @@
      <title>{{post.content.path|string+'.html'}}</title>
      <link>https://traverseda.github.io/{{post.content.path|string+'.html'}}</link>
      <guid>https://traverseda.github.io/{{post.content.path|string+'.html'}}</guid>
-     <description>{{post.content.text.split('---')[0]|jinja|markd|safe}}</description>
+     <description>{{post.content.text.split('---')[0]|jinja|markd}}</description>
      <pubDate>{{ post.created }}</pubDate>
    </item>
    {% endfor %}
