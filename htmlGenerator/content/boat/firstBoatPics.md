@@ -12,6 +12,7 @@ updated: '2017-12-08T16:33:32.126968+00:00'
 ![](boat/firstBoatPics/IMG_0616_CR2_embedded.jpg)
 
 Just some high-res pictures of my project boat from when I first bought it in 2016.
+The boat is a [new horizons 26](http://sailboatdata.com/viewrecord.asp?class_id=2925).
 
 ---
 

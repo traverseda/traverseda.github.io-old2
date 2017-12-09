@@ -14,18 +14,6 @@ If you find any errors or have any questions, please don't hesitate to
 [email me](mailto:{{'traverse.da@gmail.com'|obfuscate}})
 at {{'traverse.da@gmail.com'|obfuscate}}.
 
-## You can probably save a lot of money if you do it yourself
-
-I recently (2017) paid $80usd for ~225watts of solar cells. That's around $0.35
-per watt. Now these need to be assembled, you'll break a few 5w panels.
-Still, an equivelent pre-assembled unit 
-from costco is easily $600. It's also well under the price-per-watt of any
-preassembled solution I've seen, which I haven't seen cheaper than $0.90/watt.
-
-Now I got an excelent deal, but I think it demonstrates that doing it yourself
-can be a whole lot cheaper.
-
-
 ---
 
 ## You may not need an inverter
