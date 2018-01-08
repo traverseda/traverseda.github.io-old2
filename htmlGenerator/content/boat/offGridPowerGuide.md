@@ -16,38 +16,5 @@ at {{'traverse.da@gmail.com'|obfuscate}}.
 
 ---
 
-## You may not need an inverter
-
-A lot of consumer electronics run off of DC voltages very similar to what your
-batteries store. It's wastefull and expensive to take
-your 12 volt batteries, use an inverter to step it up
-to the 110 volts common in homes, then step it back down to the 5 volts your
-phone needs. You end up losing something like 20% of your energy to the
-conversion. Going directly from 12 volts to the 5 volts your phone needs has
-losses smaller than 5%.
-
-add information about how to do this `XL6009`.
-
-![](media/offGridPower/XL6009.jpg "XL6009 DC-DC power converter")
-
-## Buy led tape
-
-Led tape is the cheapest way to buy led lighting, and is a whole lot cheaper
-than led light bulbs. It comes in a variety of colors, a pure-white for
-workshops, a cozy warm white, full spectrum grow-lights, programmable so you can
-pick your own colour, waterproof so you can use it under water, and probably any
-option you can think of.
-
-This tape runs directly off of 12 volts, so you can hook it directly up to your
-batteries. Be aware that as your batteries lose power the led tape will dim. You
-can get around that by using the aforementioned `XL6009` to convert your 12
-volt batteries into... 12 volts. The batteries only store approximatly 12 volts, where as
-the XL6009 outputs an even 12 volts no matter what.
-
-There are two big reasons why this is cheaper
-
- * Getting all those leds into a small bulb is expensive
-
- * Converting from 110 volts down to the ~12 volts led's need is difficult in
-   that small of a space.
+# Building a simple power storage block
 
